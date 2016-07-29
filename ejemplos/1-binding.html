@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app>
+   <title>EJEMPLO 1 - BINDING</title>
+   <head>
+       <link href="../assets/css/stylo.css" rel="stylesheet" />
+   </head>
+   <body ng-controller="StringController">
+      <p><input type="text" ng-model="textoDePrueba"/></p>
+      <p>versión {{versionNumero}}</p>
+   </body>
+   
+      <!--Referenciamos la librería directamente desde Google, no necesitamos descargar un archivo-->
+      <script type="text/javascript" src="../assets/js/angular.min.js"></script>
+
+   <script>
+      function StringController($scope)
+      {
+         $scope.textoDePrueba = "Bienvenidos a MVC";
+         $scope.versionNumero = 1;
+      }
+   </script>
+</html>

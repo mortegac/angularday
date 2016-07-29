@@ -1,0 +1,61 @@
+@import url(bootstrap.min.css);
+@import url(custom.min.css);
+@import url(../font-awesome/css/font-awesome.min.css);
+
+
+/******************************************************************
+HEADER
+******************************************************************/
+.fondoHeaderAngular{
+	display: inline-block;
+	background-image: url("../images/slide1-logo.png");
+	/*background-color: red;*/
+	background-color: rgba(229, 0, 0, 1);  /*rgba(20, 150, 150, 1); #149696;*/
+	height: 200px;
+	background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center; 
+
+}
+
+.profile{
+	padding-top: 30px;
+	/*background-color: rgba(233, 30, 94, 0.82);*/
+	background-color: rgba(229, 0, 0, 1);  /*rgba(20, 150, 150, 1);#149696;*/
+	display: inline-block;
+	height: 200px;
+}
+
+/******************************************************************
+
+******************************************************************/
+.imgGit{
+	width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.imgAngularDay{
+	margin: 10px 10px;
+	width: 210px;
+}
+
+.subTituloMenu{
+	padding-left: 30px;
+	padding-top: 10px;
+	color: #c1bfbf;
+    font-weight: normal;
+}
+
+
+
+.nav_title{
+	background-color: rgba(233, 30, 94, 0.82);
+	display: inline-block;
+}
+
+.FondoLogoGrande{
+	 background-color: #149696;
+	/*background-image: url("../images/slide1.jpg");*/
+}
