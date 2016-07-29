@@ -1,22 +1,28 @@
-<!doctype html>
-<html ng-app>
-   <title>EJEMPLO 1 - BINDING</title>
-   <head>
-       <link href="../assets/css/stylo.css" rel="stylesheet" />
-   </head>
-   <body ng-controller="StringController">
-      <p><input type="text" ng-model="textoDePrueba"/></p>
-      <p>versión {{versionNumero}}</p>
-   </body>
-   
-      <!--Referenciamos la librería directamente desde Google, no necesitamos descargar un archivo-->
-      <script type="text/javascript" src="../assets/js/angular.min.js"></script>
+<!DOCTYPE html>
+<html ng-app="holamundo" >
+    <head>
+        
+        <meta charset="utf-8">
+        <title>AngularJS</title>        
+        <meta name="viewport" content="width=device-width">
+        
+        <link rel="stylesheet" type="text/css"  href="../assets/css/bootstrap.min.css"/>
+        
+        
+         
+    </head>
 
-   <script>
-      function StringController($scope)
-      {
-         $scope.textoDePrueba = "Bienvenidos a MVC";
-         $scope.versionNumero = 1;
-      }
-   </script>
+    <body>
+    
+      <h1>  {{ "Mi Aplicación AngularJS # " + (1+1) | uppercase }} </h1>
+    
+    <script src="../assets/js/angular.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script>
+        var miAppAngular = angular.module( 'holamundo', [] );
+        
+    </script>  
+    </body>
+
 </html>

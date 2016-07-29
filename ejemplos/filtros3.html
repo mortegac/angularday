@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="filtros" >
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Filtros</title>        
+        <meta name="viewport" content="width=device-width">
+        
+        <link rel="stylesheet" type="text/css"  href="../assets/css/bootstrap.min.css"/>
+        
+        
+         
+    </head>
+
+    <body>
+
+    <div class="row">
+
+    
+     
+     <div class="col-md-3"></div>
+     <div class="col-md-6">
+
+      <h1>FILTROS EN ANGULAR</h1>
+      <div ng-controller="FiltrosController">
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                <label>Texto a Filtrar:</label> <input ng-model='filtro' class="form-control input-xl" type="text">
+                <label>Limite:</label> <select class="form-control input-xl" ng-model='txtLimit'>
+                                      <option onselect="functionCall('1')">1</option>
+                                      <option onselect="functionCall('3')">3</option>
+                                      <option onselect="functionCall('5')">5</option>
+                                      <option onselect="functionCall('10')">10</option>
+                                    </select>
+
+
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th ng-click="orderByMe('name')">Nombre</th>
+                        <th ng-click="orderByMe('country')">country</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="x in nombres | orderBy:'country' | filter : filtro | orderBy:myOrderBy  | limitTo:txtLimit ">
+                        <td><img src="{{ x.img }}"></td>
+                        <td>{{ x.name }}</td>
+                        <td>{{ x.country }}</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+
+                  <!--  <ul>
+                      <li ng-repeat="x in nombres | orderBy:'country' | filter : filtro">
+                        <img src="{{ x.img }}">
+                        {{ x.name + ', ' + x.country }}
+                      </li>
+                    </ul> -->
+
+                </div>
+            </div>
+        </div>
+
+
+     </div>
+
+
+    </div>
+    </div>
+    <script src="../assets/js/angular.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script>
+        var miAppAngular = angular.module( 'filtros', [] )
+            .controller('FiltrosController', ['$scope', function($scope) {
+
+                $scope.nombres = [
+                                {name:'Jaime',country:'Arica', img:'http://placehold.it/50/CEE/000/?text=J'},
+                                {name:'Carlos',country:'Arica', img:'http://placehold.it/50/C9E/000/?text=C'},
+                                {name:'Margarita',country:'Valparaiso', img:'http://placehold.it/50/CFE/000/?text=M'},
+                                {name:'Hugo',country:'Concepcion', img:'http://placehold.it/50/9EE/000/?text=H'},
+                                {name:'Joaquin',country:'Osorno', img:'http://placehold.it/50/EEE/000/?text=J'},
+                                {name:'Gustavo',country:'Santiago', img:'http://placehold.it/50/UEE/000/?text=G'},
+                                {name:'Juana',country:'Puerto Montt', img:'http://placehold.it/50/CEE/000/?text=J'},
+                                {name:'Maria',country:'Chillan', img:'http://placehold.it/50/CAE/000/?text=M'},
+                                {name:'Alejandro',country:'Santiago', img:'http://placehold.it/50/6EE/000/?text=A'},
+                                ];
+
+                    $scope.orderByMe = function(x) { $scope.myOrderBy = x; }
+
+                    $scope.onselect = function() { $scope.txtLimit = x; }
+
+
+            }]);
+
+            
+        
+    </script>  
+    </body>
+
+</html>

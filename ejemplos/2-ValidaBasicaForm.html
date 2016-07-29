@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app='pizza'>
+
+<head>
+    <meta charset="utf-8">
+    <title>Validacion de Formulario Básica</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" type="text/css"  href="../assets/css/bootstrap.min.css"/>
+
+  
+
+</head>
+
+<body>
+
+    <div class="container" >
+
+        <h1> Pizza Online </h1>
+
+        <div class="col-sm-10">
+
+            <form id="formulario" name="formulario" novalidate >
+
+                <label>Nombre</label>
+                <input type="text" name="nombre" class="form-control" ng-model="orden.nombre" required />
+                
+                  
+
+                <label>Email</label>
+                <input type="text" name="email" class="form-control" ng-model="orden.email" required/>
+
+
+
+                <label>¿Cuántas pizzas deseas? {{orden.cantidad}}</label>
+                <input type="range" name="cantidad" ng-model="orden.cantidad" min="1" max="10" step="1" required/>
+
+
+                
+                
+
+                <br>
+                <input class="btn btn-danger" type="submit" ng-disabled="formulario.$invalid"  value="Ordenar" />
+                
+
+
+            </form>
+
+
+
+
+        </div>
+
+    </div>
+
+    <script src="../assets/js/angular.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script>
+        var miAppAngular = angular.module('pizza', []);
+        
+        
+    </script>
+</body>

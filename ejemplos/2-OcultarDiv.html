@@ -1,0 +1,33 @@
+<!--
+directiva ng-cloak
+Permite ver el resultado de nuestra plantilla html una vez ya se ha cargado y procesado, evitando así el efecto de parpadeo no deseado.
+
+ng-cloak pausa el navegador, AngularJS hace lo que tiene que hacer, y seguidamente se muestran los resultados esperados.
+
+-->
+<!DOCTYPE html>
+<html ng-app='ocultar'>
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" type="text/css"  href="../assets/css/bootstrap.min.css"/>
+
+</head>
+<body>
+    
+    
+    <div class="container" >
+      <h1 ng-bind=" 'Resultado:' + (1+1)   " ng-cloak class="ng-cloak" >  cargando ....</h1>
+       <!--      <div ng-cloak>hola {{1 + 2}}</div> -->
+    </div>
+    
+ 
+   <script src="../assets/js/angular.min.js"></script>
+   <script src="../assets/js/jquery.min.js"></script>
+   <script src="../assets/js/bootstrap.min.js"></script>
+   <script>
+        var miAppAngular = angular.module('ocultar',[]);
+    </script>
+</body>

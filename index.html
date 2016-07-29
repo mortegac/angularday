@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app>
+<html data-ng-app="AngularDay">
    <title>ANGULAR DAY</title>
    <head>
        <link href="assets/css/stylo.css" rel="stylesheet" />
@@ -9,46 +9,30 @@
       <div class="main_container">
         <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
-        <!--  <div class="navbar nav_title" style="border: 0;">
-            <img src="assets/images/sidebar-logo-bn.png" class="imgAngularDay">
-         </div> -->
-
-
-
 
             <div class="clearfix"></div>
-
             <div class="profile">
               <div class="profile_pic">
                 <img src="assets/images/perfil.jpg" alt="..." class="img-circle profile_img">
               </div>
-             <!--  <div class="row"> -->
-              <div class="profile_info"><h2>Manuel Ortega C.</h2><span><a href="http://apgca.cl/contactanos">mortega@apgca.cl</a></span></div>
-             <!--  </div> -->
+              <div class="profile_info"><h2>Manuel Ortega C.</h2><span><a href="http://apgca.cl/contactanos" class="email">mortega@apgca.cl</a></span></div>            
             </div>
             <!-- menu-->
             <div class="clearfix"></div>
              <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li>
-                     <a><i class="fa fa-home"></i> 1 - Binding<p class="subTituloMenu">Uso de Binding</p></a>
-                  </li>
-                   <li>
-                     <a><i class="fa fa-home"></i> 2 - <span class="fa fa-chevron-down"></span></a>
-                  </li>
-                   <li>
-                     <a><i class="fa fa-home"></i> 3 - <span class="fa fa-chevron-down"></span></a>
-                  </li>
-                  <li>
-                     <a><i class="fa fa-home"></i> 4- <span class="fa fa-chevron-down"></span></a>
-                  </li>
-                  <li>
-                     <a><i class="fa fa-home"></i> 5- <span class="fa fa-chevron-down"></span></a>
-                  </li>
-                  <li>
-                     <a><i class="fa fa-home"></i> 6- <span class="fa fa-chevron-down"></span></a>
-                  </li>
+                <li><a ui-sref="#">INICIO</a></li>
+                <li><a ui-sref="contacts">View Contact</a></li>
+                <li><a ui-sref="dos">Dos</a></li>
+                 
+                 <!--  <li><a href="/" ui-sref="/"><i class="fa fa-home"></i> Inicio<p class="subTituloMenu"></p></a></li>
+                  <li><a href="/uno" ui-sref="/uno"><i class="fa fa-home"></i> 1 - Binding<p class="subTituloMenu">Uso de Binding</p></a></li>
+                  <li><a href="#/dos" ui-sref="#/dos"><i class="fa fa-home"></i> 2 - Binding<p class="subTituloMenu">Uso de Binding</p></a></li>
+                  <li><a href="/" ui-sref="/tres"><i class="fa fa-home"></i> 3 - Binding<p class="subTituloMenu">Uso de Binding</p></a></li>
+                  <li><a href="/" ui-sref="/cuatro"><i class="fa fa-home"></i> 4 - Binding<p class="subTituloMenu">Uso de Binding</p></a></li>
+                  <li><a href="/" ui-sref="/cinco"><i class="fa fa-home"></i> 5 - Binding<p class="subTituloMenu">Uso de Binding</p></a></li>
+                   -->
                </ul>
             </div>
             </div>
@@ -75,13 +59,13 @@
         <div class="top_nav" >
           <div class="nav_menu fondoHeaderAngular">
             <nav>
-              <div class="nav toggle">
+             <!--  <div class="nav toggle">
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
+              </div> -->
 
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                  <a href="#">
+                  <a href="https://github.com/mortegac/angularday" target="_blank">
                     <img src="assets/images/github-128.png" alt="" class="imgGit">Repositorio
                     </span>
                   </a>
@@ -96,69 +80,13 @@
           </div>
         </div>
 
-        <div class="right_col" role="main">
+        <div class="right_col TodaPantallaCentro " role="main">
           <!-- top tiles -->
-          <div class="row tile_count">
+          <div class="row tile_count ">
          
             <div class="row">
-              <!--  <div class="col-md-12">
-                <div class="panel panel-default FondoLogoGrande">
-                <div class="panel-body text-center"><img src="assets/images/slide1-logo.png"></div>
-                  </div>
-               </div> -->
 
-
-
-               <div class="col-md-4">
-                <div class="panel panel-default">
-                  <div class="panel-heading">Ejemplo: Databinding</div>
-                <div class="panel-body">
-
-                <p>sd</p>
-                <p>sd</p>
-                <p>sd</p>
-                <p>sd</p>
-                <p>sd</p>
-                <p>sd</p>
-                <p>sd</p>
-                <p>sd</p>
-                <p>sd</p>
-                <p>sd</p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-
-
-
-
-
-
-                </div>
-                  </div>
-               </div>
-
-               <div class="col-md-4">
-                <div class="panel panel-default">
-                  <div class="panel-heading">Panel Heading</div>
-                <div class="panel-body">Panel Content</div>
-                  </div>
-               </div>
-
-               <div class="col-md-4">
-                <div class="panel panel-default">
-                  <div class="panel-heading">Panel Heading</div>
-                <div class="panel-body">Panel Content</div>
-                  </div>
-               </div>
-
+              <div data-ui-view="sectionCenter"></div>
 
             </div>
 
@@ -176,11 +104,17 @@
    </body>
    
       <!--Referenciamos la librería directamente desde Google, no necesitamos descargar un archivo-->
-      <script type="text/javascript" src="assets/js/angular.min.js"></script>
-      <!-- jQuery -->
-      <script type="text/javascript"  src="assets/js/jquery.min.js"></script>
-      <!-- Bootstrap -->
+      <script type="text/javascript" src="assets/js/angular.min.js"></script><!-- jQuery -->
+      <script type="text/javascript" src="assets/js/angular-ui-router.min.js"></script><!-- jQuery -->
+      <script type="text/javascript"  src="assets/js/jquery.min.js"></script><!-- Bootstrap -->
       <script type="text/javascript"  src="assets/js/bootstrap.min.js"></script>
+
+      <script src="app/appmain.js"></script>
+      <script src="app/controller/inicioController.js"></script>
+
+
+      <!-- <script src="app/appmodule.js"></script>-->
+    
 
  
 </html>

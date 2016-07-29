@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="filtros" >
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Filtros</title>        
+        <meta name="viewport" content="width=device-width">
+        
+        <link rel="stylesheet" type="text/css"  href="../assets/css/bootstrap.min.css"/>
+        
+        
+         
+    </head>
+
+    <body>
+
+    <div class="row">
+
+    
+     
+     <div class="col-md-3"></div>
+     <div class="col-md-6">
+
+      <h1>FILTROS EN ANGULAR</h1>
+      <div ng-controller="FiltrosController">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>Filtros Texto:</label> <input ng-model='txt' class="form-control input-xl" type="text">
+                    <h3>uppercase:  {{ txt | uppercase }} </h3>
+                    <h3>lowercase: {{ txt | lowercase }} </h3>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>Filtros Número:</label> <input ng-model='val' class="form-control input-xl" type="text">
+                    <h3>Numero:  {{ val | number }} </h3>
+                    <h3>Sin decimales:  {{ val | number:0 }} </h3>
+                    <h3>Moneda:  {{ val | number:4 }} </h3>
+                    <h3>Moneda:  {{ val | currency }} </h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>Filtros Fechas:</label> <input ng-model='fecha' class="form-control input-xl" type="text">
+                    <h3>Formato :  {{ fecha | date:"medium" }} </h3>
+                    <h3>Formato :  {{ fecha | date:"yyyy-MM-dd HH:mm:ss" }} </h3>
+                    <h3>Valores :  {{ fecha | date:"shortDate" }} </h3>
+                </div>
+            </div>
+        </div>
+
+     </div>
+
+
+    </div>
+    </div>
+    <script src="../assets/js/angular.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script>
+        var miAppAngular = angular.module( 'filtros', [] )
+            .controller('FiltrosController', ['$scope', function($scope) {
+                $scope.val = 1234.56789;
+                $scope.fecha = 1288323623006;
+        
+            }]);
+        
+    </script>  
+    </body>
+
+</html>
